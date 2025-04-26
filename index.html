@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hidden Herstory</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <!-- Add EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
@@ -17,6 +17,11 @@
   <script defer src="script.js"></script>
 </head>
 <body>
+  <div id="loading" class="loading-overlay">
+    <div class="loader"></div>
+    <p>Uncovering forgotten stories...</p>
+  </div>
+
   <header>
     <h1>Hidden Herstory</h1>
     <p>Documenting every woman they tried to erase</p>
@@ -26,20 +31,47 @@
     <div id="menu" class="dropdown hidden">
       <a href="#" onclick="openAbout()">About</a>
       <a href="#" onclick="openSuggest()">Suggest a Woman</a>
+      <a href="#" onclick="openCredits()">Photo Credits</a>
     </div>
   </header>
 
   <section class="filters">
-    <button onclick="filterCards('All')">All</button>
-    <button onclick="filterCards('STEM')">STEM</button>
-    <button onclick="filterCards('Stolen by Men')">Stolen by Men</button>
+    <button class="filter-btn active" onclick="filterCards('All')">All</button>
+    <button class="filter-btn" onclick="filterCards('STEM')">STEM</button>
+    <button class="filter-btn" onclick="filterCards('Stolen by Men')">Stolen by Men</button>
+    <button class="filter-btn" onclick="filterCards('Global Resistance')">Global Resistance</button>
   </section>
 
   <section class="search-bar">
     <input type="text" id="searchInput" oninput="searchCards()" placeholder="Search by name or bio..." />
+    <div class="search-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </div>
   </section>
 
-  <main id="cards-container"></main>
+  <main id="cards-container">
+    <!-- Cards will be loaded dynamically from women.json -->
+  </main>
+
+  <section id="impact-section" class="her-impact">
+    <div class="impact-content">
+      <h2>Her Impact</h2>
+      <p>Women have shaped our world in countless ways - as creators, innovators, leaders, and nurturers. Without women, human civilization would not exist. Women have birthed, raised, and educated every single person who has ever changed the world.</p>
+      <div class="impact-stats">
+        <div class="stat">
+          <span class="stat-number">8,000,000,000</span>
+          <span class="stat-label">People Alive Today</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Made Possible by Women</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section id="about-section" class="modal hidden">
     <div class="modal-content">
@@ -55,14 +87,34 @@
     <div class="modal-content">
       <h2>Suggest a Woman to Add</h2>
       <p>If there's a woman you'd like to see featured, please send us her information below.</p>
-      <form onsubmit="submitSuggestion(event)">
-        <input type="text" name="her_name" placeholder="Her Full Name" required />
-        <textarea name="bio_reason" placeholder="Short bio or reason to add" required></textarea>
-        <input type="email" name="sender_email" placeholder="Your Email (optional)" />
+      <form id="suggestion-form" onsubmit="submitSuggestion(event)">
+        <div class="form-group">
+          <label for="her_name">Her Full Name</label>
+          <input type="text" id="her_name" name="her_name" required />
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" name="category" required>
+            <option value="" disabled selected>Select a category</option>
+            <option value="STEM">STEM</option>
+            <option value="Stolen by Men">Stolen by Men</option>
+            <option value="Global Resistance">Global Resistance</option>
+            <option value="Arts">Arts</option>
+            <option value="Other">Other (specify in bio)</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bio_reason">Short Bio or Reason to Add</label>
+          <textarea id="bio_reason" name="bio_reason" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="sender_email">Your Email (optional)</label>
+          <input type="email" id="sender_email" name="sender_email" />
+        </div>
         <div id="submission-result" class="hidden"></div>
-        <button type="submit">Send Suggestion</button>
+        <button type="submit" class="submit-btn">Send Suggestion</button>
       </form>
-      <button onclick="closeModal()">Close</button>
+      <button onclick="closeModal()" class="close-btn">Close</button>
     </div>
   </section>
   
@@ -82,8 +134,26 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Hidden Herstory</p>
-    <p class="tiny">Image reuse includes public domain and Creative Commons photos from Wikipedia and NobelPrize.org. Notably: Dorothy Hodgkin image courtesy of NobelPrize.org. All photo credits and licensing rules followed.</p>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Hidden Herstory</h3>
+        <p>Honoring forgotten women throughout history</p>
+      </div>
+      <div class="footer-section">
+        <h3>Links</h3>
+        <a href="#" onclick="openAbout()">About</a>
+        <a href="#" onclick="openSuggest()">Suggest</a>
+        <a href="#" onclick="openCredits()">Credits</a>
+      </div>
+      <div class="footer-section">
+        <h3>Connect</h3>
+        <p>Share these stories. Remember their names.</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Hidden Herstory</p>
+      <p class="tiny">Image reuse includes public domain and Creative Commons photos from Wikipedia and NobelPrize.org.</p>
+    </div>
   </footer>
 </body>
 </html>
