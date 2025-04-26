@@ -1,0 +1,218 @@
+[
+  {
+    "name": "Ada Lovelace",
+    "bio": "Mathematician and the first computer programmer in history. Her insights into Charles Babbage\u2019s Analytical Engine were visionary.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/ada-lovelace.jpg"
+  },
+  {
+    "name": "Ada Yonath",
+    "bio": "Israeli crystallographer awarded the Nobel Prize in Chemistry for her work on the structure of the ribosome.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/ada-yonath.jpg"
+},
+  {
+    "name": "Barbara McClintock",
+    "bio": "Geneticist who discovered transposable elements or 'jumping genes' in corn. She received a Nobel Prize for her work.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/barbara-mcclintock.jpg"
+  },
+  {
+      "name": "Bette Nesmith Graham",
+      "bio": "Inventor of Liquid Paper correction fluid, which became a staple in offices worldwide.",
+      "category": "STEM",
+      "image": "Hidden%20Herstory%20images/bette-nesmith-graham.jpg"
+  },
+  {
+    "name": "Chien-Shiung Wu",
+    "bio": "Experimental physicist who worked on the Manhattan Project and made critical discoveries in beta decay.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/chien-shiung-wu.jpg",
+    "image2": "Hidden%20Herstory%20images/chien-shiung-wu1.jpg"
+  },
+  {
+    "name": "Dorothy Hodgkin",
+    "bio": "Chemist who developed protein crystallography and won the Nobel Prize for her work on penicillin and vitamin B12.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/dorothy-hodgkin.jpg",
+    "image2": "Hidden%20Herstory%20images/dorothy-work.jpg"
+  },
+  {
+    "name": "Elizabeth Blackwell",
+    "bio": "First woman to receive a medical degree in the United States and a pioneer in promoting education for women in medicine.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/elizabeth-blackwell.jpg",
+    "image2": "Hidden%20Herstory%20images/elizabeth-blackwell1.jpg"
+  },
+  {
+    "name": "Emmy Noether",
+    "bio": "Mathematician who developed Noether\u2019s Theorem, a key principle in theoretical physics linking symmetry and conservation laws.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/emmy-noether.jpg",
+    "image2": "Hidden%20Herstory%20images/emmy-noether1.jpg"
+  },
+  {
+    "name": "Florence Nightingale",
+    "bio": "Pioneer of modern nursing, known for her work during the Crimean War and transforming hospital sanitation practices.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/florence-nightingale.jpg"
+  },
+  {
+    "name": "Gertrude Elion",
+    "bio": "Pharmacologist and Nobel laureate who developed drugs to treat leukemia, herpes, AIDS, and more.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/gertrude-elien.jpg",
+    "image2": "Hidden%20Herstory%20images/gertrude-elien1.jpg"
+  },
+  {
+    "name": "Grace Hopper",
+    "bio": "Computer scientist and U.S. Navy rear admiral who developed the first compiler for a programming language.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/grace-hopper.jpg"
+  },
+  {
+    "name": "Hedy Lamarr",
+    "bio": "Hollywood actress and inventor of frequency-hopping spread spectrum technology, the foundation of Wi-Fi and Bluetooth.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/hedy-lamarr.jpg",
+    "image2": "Hidden%20Herstory%20images/hedy-lamarr.png"
+  },
+  {
+    "name": "Hypatia",
+    "bio": "Ancient Greek mathematician, astronomer, and philosopher\u2014murdered for her intellect by a mob in Alexandria.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/hypatia.png",
+    "image2": "Hidden%20Herstory%20images/hypatia1.jpg"
+  },
+  {
+    "name": "Jocelyn Bell Burnell",
+    "bio": "Astrophysicist who discovered pulsars, though the Nobel Prize went to her male supervisor.",
+    "category": "Stolen by Men",
+    "image": "Hidden%20Herstory%20images/jocelyn-bell-burnell.jpg",
+    "image2": "Hidden%20Herstory%20images/jocelyn-bell-burnell1.jpeg"
+  },
+  {
+    "name": "Katherine Johnson",
+    "bio": "NASA mathematician who calculated trajectories for the first U.S. spaceflights, enabling John Glenn's orbit.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/katherine-johnson.jpg"
+  },
+  {
+    "name": "Lise Meitner",
+    "bio": "Physicist who co-discovered nuclear fission but was denied a Nobel Prize that went solely to Otto Hahn.",
+    "category": "Stolen by Men",
+    "image": "Hidden%20Herstory%20images/lise-meitner.jpg"
+  },
+  {
+    "name": "Mae Jemison",
+    "bio": "Engineer, physician, and the first African-American woman in space aboard the Space Shuttle Endeavour.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/mae-jemison.jpg",
+    "image2": "Hidden%20Herstory%20images/mae-jemison1.jpg"
+  },
+  {
+    "name": "Marie Curie",
+    "bio": "Physicist and chemist who discovered radium and polonium. First woman to win a Nobel Prize and the only person to win in two sciences.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/marie-curie.jpg",
+    "image2": "https://tse2.mm.bing.net/th?id=OIP.Rc9RAi_gk9_ANOpeiTmwJgHaHD&pid=Api"
+  },
+  {
+    "name": "Mary Jackson",
+    "bio": "Mathematician and aerospace engineer who became NASA\u2019s first Black female engineer.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/mary-jackson.jpg"
+  },
+  {
+    "name": "Maryam Mirzakhani",
+    "bio": "Iranian mathematician and the first woman to win the Fields Medal, the highest honor in mathematics.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/maryam-mirzakhani.jpg"
+  },
+  {
+    "name": "Rachel Carson",
+    "bio": "Marine biologist and author of 'Silent Spring,' which exposed the dangers of pesticides and launched the modern environmental movement.",
+    "category": "STEM",
+    "image": "Hidden Herstory images/rachel-carson.jpg",
+    "image2": "Hidden Herstory images/rachel-carson1.jpeg"
+  },
+  {
+    "name": "Rosalind Franklin",
+    "bio": "Chemist whose X-ray images revealed the structure of DNA. Her male colleagues received the Nobel after her death.",
+    "category": "Stolen by Men",
+    "image": "Hidden%20Herstory%20images/rosalind-franklin.jpg",
+    "image2": "Hidden%20Herstory%20images/rosalind-franklin1.jpg"
+  },
+  {
+    "name": "Tu Youyou",
+    "bio": "Chinese pharmaceutical chemist who discovered artemisinin, a treatment for malaria that has saved millions of lives.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/tu-youyou.jpg"
+  },
+  {
+    "name": "Mary Anning",
+    "bio": "Fossil collector and paleontologist who discovered the first correctly identified ichthyosaur skeleton. Her contributions to science were often overlooked because of her gender and class.",
+    "category": "Stolen by Men",
+    "image": "Hidden%20Herstory%20images/mary-anning.jpg"
+  },
+  {
+    "name": "Esther Lederberg",
+    "bio": "Microbiologist who discovered the lambda bacteriophage and developed the replica plating technique. Her pioneering work laid the foundation for modern bacterial genetics.",
+    "category": "STEM",
+    "image": "Hidden%20Herstory%20images/esther-lederberg.jpg"
+},
+{
+  "name": "Lydia Villa-Komaroff",
+  "bio": "Molecular biologist and one of the first Mexican-American women in the U.S. to earn a doctorate in the sciences. Her work helped pioneer the use of bacteria to produce human insulin.",
+  "category": "STEM",
+  "image": "Hidden%20Herstory%20images/lydia-villa-komaroff.jpg"
+},
+{
+  "name": "Mary Golda Ross",
+  "bio": "The first known Native American female engineer and a trailblazer in aerospace design. She worked on top-secret space exploration missions during the space race.",
+  "category": "STEM",
+  "image": "Hidden%20Herstory%20images/mary-golda-ross.jpg"
+},
+{
+  "name": "Marie Van Brittan Brown",
+  "bio": "Inventor of the first home security system. Her design laid the groundwork for modern CCTV and alarm systems.",
+  "category": "Stolen by Men",
+  "image": "Hidden%20Herstory%20images/marie-van-brittan-brown.png"
+},
+{
+  "name": "Kalpana Chawla",
+  "bio": "The first Indian-born woman in space. A NASA astronaut and aerospace engineer, she died tragically in the Columbia space shuttle disaster.",
+  "category": "STEM",
+  "image": "Hidden%20Herstory%20images/kalpana-chawla.jpg"
+},
+{
+  "name": "Margaret Keane",
+  "bio": "Artist known for her 'big eyes' paintings, whose husband claimed credit for her work until she won a court case proving her authorship.",
+  "category": "Stolen by Men",
+  "image": "Hidden%20Herstory%20images/margaret-keane.jpg"
+},
+{
+  "name": "Marthe Gautier",
+  "bio": "French pediatrician whose research led to the discovery of the chromosomal cause of Down syndrome, but her male colleague took credit.",
+  "category": "Stolen by Men",
+  "image": "Hidden%20Herstory%20images/marthe-gautier.png"
+},
+{
+  "name": "Claudia Goldin",
+  "bio": "Economist who pioneered research into women’s roles in the labor force. Her foundational work has often been overshadowed by male economists.",
+  "category": "Stolen by Men",
+  "image": "Hidden%20Herstory%20images/claudia-goldin.jpg"
+},
+{
+  "name": "Jewel Plummer Cobb",
+  "bio": "Biologist and cancer researcher who also fought to expand opportunities for women and minorities in science.",
+  "category": "STEM",
+  "image": "Hidden%20Herstory%20images/jewel-plummer-cobb.jpg"
+},
+{
+  "name": "Trotula of Salerno",
+  "bio": "Medieval physician whose groundbreaking texts on women's health were later attributed to male authors or dismissed as myth.",
+  "category": "Stolen by Men",
+  "image": "Hidden%20Herstory%20images/trotula-of-salerno.jpg"
+}
+]

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hidden Herstory</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <!-- Add EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script>
+    // Initialize EmailJS with your public key
+    (function() {
+      emailjs.init("WFyfWf1iLGMxvS-i8"); // Replace with your actual public key
+    })();
+  </script>
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Hidden Herstory</h1>
+    <p>Documenting every woman they tried to erase</p>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+    <div id="menu" class="dropdown hidden">
+      <a href="#" onclick="openAbout()">About</a>
+      <a href="#" onclick="openSuggest()">Suggest a Woman</a>
+    </div>
+  </header>
+
+  <section class="filters">
+    <button onclick="filterCards('All')">All</button>
+    <button onclick="filterCards('STEM')">STEM</button>
+    <button onclick="filterCards('Stolen by Men')">Stolen by Men</button>
+  </section>
+
+  <section class="search-bar">
+    <input type="text" id="searchInput" oninput="searchCards()" placeholder="Search by name or bio..." />
+  </section>
+
+  <main id="cards-container"></main>
+
+  <section id="about-section" class="modal hidden">
+    <div class="modal-content">
+      <h2>About This Project</h2>
+      <p>Made by women, for women. This project was created to spotlight the hidden figures in history whose work and lives were ignored, minimized, or stolen by men. We believe every woman deserves to be remembered.</p>
+      <p>Throughout history, women's contributions to science, art, literature, and innovation have often been erased, minimized, or attributed to men. Hidden Herstory aims to restore these women to their rightful place in our collective memory.</p>
+      <p>Our mission is to educate, inspire, and empower by highlighting women whose brilliance and determination changed the world, even when the world refused to acknowledge them.</p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </section>
+
+  <section id="suggest-section" class="modal hidden">
+    <div class="modal-content">
+      <h2>Suggest a Woman to Add</h2>
+      <p>If there's a woman you'd like to see featured, please send us her information below.</p>
+      <form onsubmit="submitSuggestion(event)">
+        <input type="text" name="her_name" placeholder="Her Full Name" required />
+        <textarea name="bio_reason" placeholder="Short bio or reason to add" required></textarea>
+        <input type="email" name="sender_email" placeholder="Your Email (optional)" />
+        <div id="submission-result" class="hidden"></div>
+        <button type="submit">Send Suggestion</button>
+      </form>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </section>
+  
+  <section id="credits-section" class="modal hidden">
+    <div class="modal-content">
+      <h2>Photo Credits & Copyright Information</h2>
+      <p>This website uses images from various sources with appropriate attribution:</p>
+      <ul class="credits-list">
+        <li>Most historical photos are from public domain sources including the Library of Congress, Wikimedia Commons, and governmental archives.</li>
+        <li>Dorothy Hodgkin image courtesy of NobelPrize.org.</li>
+        <li>Recent photographs are used under Creative Commons licensing from Wikipedia and institutional websites.</li>
+        <li>All photos of women in the "Stolen by Men" category are shared with proper attribution to highlight historical injustice.</li>
+      </ul>
+      <p>If you believe any image has been used improperly, please contact us immediately.</p>
+      <button onclick="closeModal()">Close</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Hidden Herstory</p>
+    <p class="tiny">Image reuse includes public domain and Creative Commons photos from Wikipedia and NobelPrize.org. Notably: Dorothy Hodgkin image courtesy of NobelPrize.org. All photo credits and licensing rules followed.</p>
+  </footer>
+</body>
+</html>
