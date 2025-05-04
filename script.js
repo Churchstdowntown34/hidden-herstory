@@ -1,14 +1,54 @@
+// Fallback data in case women.json is missing or invalid
+const fallbackWomen = [
+  {
+    name: "Ada Lovelace",
+    category: "STEM",
+    bio: "Often regarded as the first computer programmer. Ada Lovelace wrote the first algorithm intended to be processed by a machine, specifically Charles Babbage's Analytical Engine.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Ada_Lovelace_portrait.jpg/800px-Ada_Lovelace_portrait.jpg"
+  },
+  {
+    name: "Rosalind Franklin",
+    category: "Stolen by Men",
+    bio: "A chemist whose X-ray diffraction images of DNA were critical to understanding DNA's structure, but her contributions were not fully recognized during her lifetime as Watson and Crick used her data without proper attribution.",
+    image: "https://upload.wikimedia.org/wikipedia/en/thumb/9/97/RosalinFranklinLabPhoto.jpg/440px-RosalinFranklinLabPhoto.jpg"
+  }
+];
+
 async function loadWomen() {
   try {
-    const response = await fetch("women.json");
-    const women = await response.json();
+    console.log("Attempting to fetch women.json...");
+    let women;
+    
+    try {
+      const response = await fetch("women.json");
+      console.log("Fetch response status:", response.status);
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      women = await response.json();
+      console.log("Women data successfully loaded from women.json");
+    } catch (jsonError) {
+      console.warn("Failed to load women.json, using fallback data:", jsonError);
+      women = fallbackWomen;
+    }
+    
+    if (!women || !Array.isArray(women) || women.length === 0) {
+      console.warn("No valid women data found, using fallback");
+      women = fallbackWomen;
+    }
+    
+    console.log("Processing women data:", women);
     const container = document.getElementById("cards-container");
     
     // Check if container exists
     if (!container) {
       console.error("Error: #cards-container element not found in HTML");
+      hideLoadingOverlay(); // Hide loading even if there's an error
       return;
     }
+
+    // Clear any existing content
+    container.innerHTML = "";
 
     women.forEach((woman, i) => {
       const card = document.createElement("div");
@@ -122,14 +162,34 @@ async function loadWomen() {
     popCard.appendChild(popHeading);
     popCard.appendChild(popText);
     container.appendChild(popCard);
+    
+    // Hide loading overlay once everything is loaded
+    hideLoadingOverlay();
   } catch (err) {
-    console.error("Error loading women.json:", err);
+    console.error("Error in loadWomen function:", err);
     const container = document.getElementById("cards-container");
     if (container) {
       container.innerHTML = `<div class="error-message">Error loading women data. Please try refreshing the page. Details: ${err.message}</div>`;
     } else {
       console.error("Error: #cards-container element not found in HTML");
     }
+    // Hide loading even if there's an error
+    hideLoadingOverlay();
+  }
+}
+
+// Function to hide the loading overlay
+function hideLoadingOverlay() {
+  console.log("Hiding loading overlay...");
+  const loadingOverlay = document.getElementById("loading");
+  if (loadingOverlay) {
+    loadingOverlay.style.opacity = "0";
+    setTimeout(() => {
+      loadingOverlay.style.display = "none";
+      console.log("Loading overlay hidden");
+    }, 500); // Wait for fade-out animation
+  } else {
+    console.error("Error: #loading element not found");
   }
 }
 
@@ -247,10 +307,16 @@ function submitSuggestion(event) {
   // Show loading indicator
   resultDiv.textContent = "Sending your suggestion...";
   resultDiv.classList.remove("hidden");
-  resultDiv.style.color = "#444";
+  resultDiv.classList.add("result-message");
+  // Ensure EmailJS is initialized before sending the form
+  if (!emailjs || typeof emailjs.sendForm !== 'function') {
+    console.error("Error: EmailJS is not properly initialized");
+    resultDiv.textContent = "Error: Email service not available. Please try again later.";
+    resultDiv.style.color = "red";
+    return;
+  }
 
-  // Make sure to initialize EmailJS in your HTML file:
-  // <script>emailjs.init("YOUR_USER_ID");</script>
+  emailjs.init('your_user_id'); // Replace 'your_user_id' with your actual EmailJS user ID
   emailjs.sendForm('service_c0ijdb5', 'template_n3qwajl', form)
     .then(() => {
       resultDiv.textContent = "Thank you! Your suggestion has been sent.";
@@ -269,11 +335,9 @@ function submitSuggestion(event) {
 
 // Initialize everything when DOM is fully loaded
 window.addEventListener("DOMContentLoaded", () => {
-  // Add EmailJS initialization if it's not in your HTML
-  // if (typeof emailjs !== 'undefined') {
-  //   emailjs.init("YOUR_USER_ID");
-  // }
+  console.log("DOM content loaded");
   
+  // Call loadWomen directly instead of waiting for full page load
   loadWomen();
   
   // Close modals when clicking outside content
@@ -284,4 +348,10 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  
+  // If page load takes too long, automatically hide loading overlay after 5 seconds
+  setTimeout(() => {
+    console.log("Safety timeout reached, hiding loading overlay");
+    hideLoadingOverlay();
+  }, 5000);
 });

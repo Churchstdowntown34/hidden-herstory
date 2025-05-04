@@ -214,5 +214,17 @@
   "bio": "Medieval physician whose groundbreaking texts on women's health were later attributed to male authors or dismissed as myth.",
   "category": "Stolen by Men",
   "image": "Hidden%20Herstory%20images/trotula-of-salerno.jpg"
-}
+},
+{
+  "name": "Angela Davis",
+  "bio": "Political activist, scholar, and author known for her work on civil rights and prison reform. She has been a prominent figure in the fight against systemic racism and sexism, but she was discredited and silenced for being too radical",
+  "category": "Public figures",
+  "image": "Hidden%20Herstory%20images/angela-davis.jpg"
+},
+{
+  "name": "Malala Yousafzai",
+  "bio": "Pakistani education activist and the youngest Nobel Peace Prize laureate. She began advocating for girls' education at a young age and survived an assassination attempt by the Taliban in 2012. Following her recovery, she co-founded the Malala Fund to promote education for girls worldwide.",
+  "category": "Public figures",
+  "image": "https://upload.wikimedia.org/wikipedia/commons/f/fe/Malala_Yousafzai_2015.jpg"
+  }
 ]
